@@ -2,7 +2,11 @@ import me.monmcgt.code.onstance.library.java.OnstanceConnector;
 
 public class TestMain {
     public static void main(String[] args) {
-        OnstanceConnector onstanceConnector = new OnstanceConnector("456544358544108", (response) -> {
+        String uid = System.getProperty("onstance.uid");
+        if (uid == null) {
+            uid = "555555555555555555555555555555555555555555555555";
+        }
+        OnstanceConnector onstanceConnector = new OnstanceConnector(56790, uid, (response) -> {
             System.out.println(response.toString());
         });
         onstanceConnector.start();
